@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.age.observe(this,{newAge ->
             tv_age.text = newAge.toString()
+            count = newAge
         })
 
         viewModel.status.observe(this,{newStatus->
