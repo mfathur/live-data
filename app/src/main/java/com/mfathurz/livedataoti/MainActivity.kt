@@ -1,7 +1,7 @@
 package com.mfathurz.livedataoti
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,23 +19,23 @@ class MainActivity : AppCompatActivity() {
         /**
          * me-define active observer ke livedata2 yang ada di viewmodel
          *  agar view bisa dapet nilainya secara live
-          */
+         */
 
-        viewModel.name.observe(this,{newName->
+        viewModel.name.observe(this, { newName ->
             tv_name.text = newName
         })
 
-        viewModel.age.observe(this,{newAge ->
+        viewModel.age.observe(this, { newAge ->
             tv_age.text = newAge.toString()
             count = newAge
         })
 
-        viewModel.status.observe(this,{newStatus->
+        viewModel.status.observe(this, { newStatus ->
             tv_status.text = newStatus
         })
 
         btn_set_name1.setOnClickListener {
-          viewModel.setName1(et_set_name1.text.toString())
+            viewModel.setName1(et_set_name1.text.toString())
         }
 
         btn_set_name2.setOnClickListener {
